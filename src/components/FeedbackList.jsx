@@ -13,7 +13,7 @@ function FeedbackList({ feedbacks }) {
             <ul className="space-y-4">
                 {feedbacks.map((item) => (
                     <li key={item._id} className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                        <p className="text-sm font-semibold text-blue-600">{item.name}</p>
+                        <p className="text-sm font-semibold text-blue-600">{item.name.charAt(0).toUpperCase() + item.name.slice(1).toLowerCase()}</p>
                         <p className="text-gray-700 mt-1 text-sm">{item.feedback}</p>
                         <p className="text-xs text-gray-400 mt-2">
                             {new Date(item.createdAt).toLocaleString()}
