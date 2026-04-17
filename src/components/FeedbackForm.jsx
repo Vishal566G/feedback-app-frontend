@@ -64,7 +64,7 @@ function FeedbackForm({ onSubmit }) {
         "
       >
         {/* Subtle top accent bar */}
-        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-violet-500 via-blue-500 to-cyan-500 rounded-t-2xl" />
+        <div className="absolute top-0 left-0 right-0 h-0.75 bg-linear-to-r from-violet-500 via-blue-500 to-cyan-500 rounded-t-2xl" />
 
         <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
           Share your thoughts

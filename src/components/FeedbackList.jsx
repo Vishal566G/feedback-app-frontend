@@ -65,7 +65,7 @@ function FeedbackList({ feedbacks }) {
                 </span>
             </div>
 
-            <div className="max-h-[520px] overflow-y-auto pr-1 space-y-3 scrollbar-thin">
+            <div className="max-h-130 overflow-y-auto pr-1 space-y-3 scrollbar-thin">
                 {feedbacks.map((item, index) => (
                     <div
                         key={item._id}
