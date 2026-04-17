@@ -1,19 +1,20 @@
 import { useState } from "react";
 import FeedbackForm from "./components/FeedbackForm";
 import FeedbackList from "./components/FeedbackList";
+import API from "./axios/axios";
 
 function App() {
-  const handleSubmit = async ({ name, feedback }) => {
+  const [feedbacks, setFeedbacks] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+
+  const handleSubmit = async (feedbackData) => {
     try {
-      const res = await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, feedback }),
-      });
-      const newFeedback = await res.json();
-      setFeedbacks((prev) => [newFeedback, ...prev]);
+      const res = await API.post("/", feedbackData);
+
+      setFeedbacks((prev) => [res.data, ...prev]);
     } catch (err) {
-      console.error("Failed to submit feedback:", err);
+      alert(err.response?.data?.message || "Submission failed");
     }
   };
   return (
