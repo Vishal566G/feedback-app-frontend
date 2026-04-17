@@ -54,7 +54,7 @@ function FeedbackForm({ onSubmit }) {
         <textarea
           value={feedback}
           onChange={(e) => setFeedback(e.target.value)}
-          placeholder="Write your feedback..."
+          placeholder="Write your feedback here (minimum 10 characters)"
           rows={4}
           className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
         />
