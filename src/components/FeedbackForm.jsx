@@ -8,7 +8,10 @@ function FeedbackForm({ onSubmit }) {
 
   const validate = () => {
     const newErrors = {};
-    if (!name.trim()) newErrors.name = "Name is required.";
+    if (!name.trim()) { newErrors.name = "Name is required." } else if (!/^[a-zA-Z\s\-]+$/.test(name)) {
+      newErrors.name = "Name contains invalid characters.";
+    }
+
     if (!feedback.trim()) newErrors.feedback = "Feedback is required.";
     return newErrors;
   };
